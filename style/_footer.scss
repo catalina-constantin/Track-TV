@@ -68,3 +68,15 @@
     }
   }
 }
+
+.dark-theme .quick-links a {
+  color: $color-text-light;
+}
+
+.dark-theme .social-btn {
+  background: $color-text-light;
+}
+
+.dark-theme .social-btn .bi {
+  color: $color-bg-dark;
+}

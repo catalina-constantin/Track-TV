@@ -1,3 +1,5 @@
+// Light theme
+
 $color-bg:        #EBFAFF;
 $color-text-dark: #091e51;
 $color-accent:    #e5228d;
@@ -8,6 +10,17 @@ $color-overlay-1: rgba(0, 0, 0, 0.05);
 $color-overlay-2: rgba(0, 0, 0, 0.35);
 $color-overlay-3: rgba(0, 0, 0, 0.65);
 $color-surface:   rgb(3, 10, 27);
+
+// Dark theme
+
+$color-bg-dark:         #030A1B;
+$color-text-light:      #EBFAFF;
+$color-card-dark:       #181F2A;
+$color-overlay-dark-1:  rgba(0, 0, 0, 0.10);
+$color-overlay-dark-2:  rgba(0, 0, 0, 0.45);
+$color-overlay-dark-3:  rgba(0, 0, 0, 0.75);
+$color-surface-dark-1:  #0B1320;
+$color-text-muted-dark: #A5B3C7;
 
 $radius-xxl: 25px;
 $radius-xl:  18px;

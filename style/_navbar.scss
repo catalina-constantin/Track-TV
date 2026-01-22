@@ -60,3 +60,11 @@
         cursor: pointer;
     }
 }
+
+.dark-theme .navbar{
+    background-color: rgb(24, 31, 42, 0.5);
+}
+
+.dark-theme .nav-links a {
+    color: $color-text-light;
+}

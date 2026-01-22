@@ -13,3 +13,7 @@
 body {
     background-color: $color-bg;
 }
+
+body.dark-theme {
+    background-color: $color-bg-dark;
+}
