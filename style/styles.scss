@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'navbar';
+@import 'movie-card';
+@import 'footer';
+@import 'responsive';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-bg;
+}
