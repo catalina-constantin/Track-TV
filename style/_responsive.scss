@@ -1,0 +1,22 @@
+@import 'variables';
+
+@media screen and (max-width: $bp-tablet) {
+  .site-header {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      align-items: center;
+      text-align: center;
+
+      &.responsive {
+        display: flex;
+      }
+    }
+
+    .icon {
+      display: block;
+    }
+  }
+}

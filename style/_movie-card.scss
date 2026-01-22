@@ -1,0 +1,163 @@
+@import 'variables';
+
+.tray { 
+    padding-top: $space-9; 
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: $space-7;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding: 0 16px;
+}
+
+
+.movie-card {
+    background: $color-card;
+    border-radius: $radius-xl;
+    box-shadow: $shadow-sm;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform .18s ease, box-shadow .18s ease; 
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-lg;
+    }
+
+    &_media {
+        position: relative;
+        border-radius: $radius-lg;                   
+        margin: $space-4 $space-4 0 $space-4; 
+        isolation: isolate;
+        overflow: hidden;
+    }
+
+    &_image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+        transform: translateZ(0);
+    }
+
+    &_overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+        180deg,
+        $color-overlay-1 20%,   
+        $color-overlay-2 70%,   
+        $color-overlay-3 100%   
+        );
+        pointer-events: none;
+    }
+
+    &_title-wrap {
+        position: absolute;
+        left: $space-4;           
+        right: 74px;                   
+        bottom: $space-4;         
+        z-index: 1;
+    }
+
+    &_title {
+        margin: 0;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.2;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+    }
+
+    &_play {
+        position: absolute;
+        right: $space-4;          
+        bottom: $space-4;        
+        width: 40px;
+        height: 40px;
+        border-radius: $radius-pill; 
+        border: none;
+        background: $color-surface;  
+        color: #fff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: $shadow-play;   
+        transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+        &:hover {
+        transform: translateY(-2px);
+        box-shadow: $shadow-play-hover; 
+        }
+    }
+
+    &_body {
+        padding: $space-4 $space-5 $space-5 $space-5; 
+    }
+
+    &_meta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px 12px;
+        place-items: center;
+
+        &-item {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        text-align: left;
+        }
+
+        &-key {
+        font-size: 15px;
+        color: $color-muted;
+        letter-spacing: 0.02em;
+        }
+
+        &-value {
+            font-size: 13px;
+            font-weight: 700;
+            color:$color-ink;
+        }
+    }
+}
+
+.dark-theme {
+    .movie-card {
+        background-color: $color-card-dark;
+    }
+
+    &_overlay {
+        background: linear-gradient(
+            180deg,
+            $color-overlay-dark-1 20%,
+            $color-overlay-dark-2 70%,
+            $color-overlay-dark-3 100%,
+        )
+    }
+
+    &_title {
+        color: $color-text-light;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
+    }
+    
+}
+
+.dark-theme .movie-card_meta-key {
+    color: $color-text-muted-dark;
+}
+
+.dark-theme .movie-card_meta-value {
+    color: $color-text-light;
+}
+
+.dark-theme .movie-card_play {
+    background: $color-surface-dark-1;
+    box-shadow: 0 12px 22px rgba(51, 53, 56, 0.25);
+}

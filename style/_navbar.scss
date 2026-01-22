@@ -1,0 +1,70 @@
+@import 'variables';
+
+.site-header {
+    padding: $space-2 $space-4;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .navbar {
+        display: flex;
+        flex-wrap: nowrap;
+        max-width: 1100px;
+        width: 100%;
+        margin-inline: auto;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: $radius-xxl;
+        padding-inline: 20px;
+        box-shadow: $shadow-sm;
+    }
+
+    .logo {
+        width: 70px;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        font-size: 20px;
+        gap: $space-7;
+        padding-inline-start: 0;
+
+        a {
+            text-decoration: none;
+            color: $color-text-dark;
+
+            &:hover {
+                color: $color-accent;
+                text-decoration-line: underline;
+            }
+        }
+    }
+
+    .icon {
+        display: none;
+    }
+
+    > nav > div > button > img { width: 25px; }
+    > nav > div > a > img     { width: 25px; }
+   
+    .actions {
+        @include flex-center($space-3);
+    }
+
+    .icon-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.dark-theme .navbar{
+    background-color: rgb(24, 31, 42, 0.5);
+}
+
+.dark-theme .nav-links a {
+    color: $color-text-light;
+}

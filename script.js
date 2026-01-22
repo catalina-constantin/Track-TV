@@ -120,9 +120,35 @@ function renderTrendingMovies() {
   }
 }
 
+function updateLogosForTheme() {
+  const isDark = document.body.classList.contains('dark-theme');
+  const logo = document.querySelector('.logo');
+  if (logo) {
+    logo.src = isDark 
+    ? 'assets/dark-mode/Logo-Light.svg'
+    : 'assets/light-mode/Logo-Dark.svg'
+  }
+
+  document.querySelectorAll('.icon-btn img, .icon img').forEach(img => {
+    const name = img.dataset.icon;
+    if (!name) return;
+    img.src = isDark
+      ? `assets/dark-mode/${name}.svg`
+      : `assets/light-mode/${name}.svg`;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTrendingMovies();
   fetchTrendingMovies();
+
+  const themeBtn = document.querySelector('button[aria-label="Toggle Theme"]');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+      updateLogosForTheme();
+    });
+  }
 });
 
 function showTrendsMessage(msg) {

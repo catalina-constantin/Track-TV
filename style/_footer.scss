@@ -1,0 +1,82 @@
+@import 'variables';
+
+
+.site-footer {
+  display: grid;
+  justify-items: center;
+  gap: $space-9;
+  padding-top: $space-9;
+  padding-bottom: $space-5;
+
+  .quick-links {
+    list-style: none;
+    margin: 0;
+    padding-inline-start: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+    max-width: 560px;
+
+    li {
+        display: flex;
+        gap: $space-3;
+
+
+        &::after {
+            content: "›";
+            font-size: 22px;
+            color: #9AA3B2;
+        }
+    }
+
+    a {
+      @include flex-center(6px);
+      color: $color-text-dark;
+      font-size: 16px;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-accent;
+        text-decoration-line: underline;
+      }
+    }
+  }
+
+  .social-media {
+    @include flex-center($space-7);
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: $radius-10;
+    background: $color-surface;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+
+    .bi {
+      color: $color-bg;
+      font-size: 28px;
+      line-height: 1;
+      display: block;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.dark-theme .quick-links a {
+  color: $color-text-light;
+}
+
+.dark-theme .social-btn {
+  background: $color-text-light;
+}
+
+.dark-theme .social-btn .bi {
+  color: $color-bg-dark;
+}
