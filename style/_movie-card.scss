@@ -146,20 +146,18 @@
         color: $color-text-light;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.55);
     }
-
-
-    &_meta {
-        &-key   { color: $color-text-muted-dark; }
-        &-value { color: $color-text-light; }
-    }
-
     
-    &_play {
-        background: $color-surface-dark-1;
+}
 
-        &:hover {
-            background: color-mix(in srgb, $color-surface-dark-1, white 6%); 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-        }
-    }
+.dark-theme .movie-card_meta-key {
+    color: $color-text-muted-dark;
+}
+
+.dark-theme .movie-card_meta-value {
+    color: $color-text-light;
+}
+
+.dark-theme .movie-card_play {
+    background: $color-surface-dark-1;
+    box-shadow: 0 12px 22px rgba(51, 53, 56, 0.25);
 }
